@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placepoint Team Big Dipper Hackathon</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --dark: #34495e;
+            --light: #ecf0f1;
+            --accent: #9b59b6;
+            --warning: #e74c3c;
+            --info: #1abc9c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .hackathon-details {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hackathon-details h2 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .frontend-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .backend-header {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .beginner {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .intermediate {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+
+        .advanced {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tag {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            background-color: var(--light);
+        }
+
+        .resources {
+            margin-top: 1rem;
+        }
+
+        .resources h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .resource-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .progress-container {
+            margin-top: 1rem;
+            background-color: #eee;
+            border-radius: 10px;
+            height: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        .feature-list {
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-icon {
+            margin-right: 0.5rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .goals {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .goals h2 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 0.5rem;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .goal-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .goal-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .goal-card h3 i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+
+        .goal-card p {
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+
+        .featured-section {
+            background: linear-gradient(135deg, #fff, #f5f7fa);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .featured-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .schedule {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+
+        .schedule th, .schedule td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule th {
+            background-color: var(--light);
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .schedule tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+
+            .timeline-container::after {
+                left: 15px;
+            }
+
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">Placepoint</div>
+        <div class="team-name">Team Big Dipper</div>
+        <h1>Two-Day Hackathon</h1>
+        <p class="subtitle">Welcome to our new developers! Let's explore our codebase together.</p>
+    </header>
+
+    <div class="hackathon-details">
+        <h2>📋 Hackathon Information</h2>
+        <div class="detail-grid">
+            <div class="detail-item">
+                <span class="detail-label">📅 Dates:</span>
+                <span class="detail-value">Sunday & Monday</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">👥 Team:</span>
+                <span class="detail-value">Team Big Dipper</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">🏢 Company:</span>
+                <span class="detail-value">Placepoint</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">👨‍💻 New Members:</span>
+                <span class="detail-value">Frontend & Backend Engineers</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="goals">
+        <h2>🎯 Hackathon Goals</h2>
+        <p>Our primary goal is to get you comfortable with our codebase and development environment. We want you to have fun exploring and experimenting with our stack!</p>
+
+        <div class="goals-grid">
+            <div class="goal-card">
+                <h3>🔧 Setup & Exploration</h3>
+                <p>Get the codebase set up on your local machine and run the application successfully. Explore the architecture and understand how different components interact.</p>
+            </div>
+            <div class="goal-card">
+                <h3>🧪 Experimentation</h3>
+                <p>Play with the code! Add components, make changes, and see how things work. This is a no-judgment zone - feel free to try anything that interests you.</p>
+            </div>
+            <div class="goal-card">
+                <h3>🤝 Collaboration</h3>
+                <p>Work with the team to understand our development workflow, pull request process, and coding standards. Ask questions and share your ideas!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h2>⏱️ Hackathon Schedule</h2>
+        <table class="schedule">
+            <tr>
+                <th>Time</th>
+                <th>Day 1 (Sunday)</th>
+                <th>Day 2 (Monday)</th>
+            </tr>
+            <tr>
+                <td>Morning</td>
+                <td>Environment setup & codebase walkthrough</td>
+                <td>Continue development of chosen projects</td>
+            </tr>
+            <tr>
+                <td>Afternoon</td>
+                <td>Pick a project & start development</td>
+                <td>Finalize projects & prepare demonstrations</td>
+            </tr>
+            <tr>
+                <td>End of Day</td>
+                <td>Progress check-in & troubleshooting</td>
+                <td>Project demos & team celebration</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="all">All Projects</button>
+        <button class="tab-btn" data-tab="frontend">Frontend</button>
+        <button class="tab-btn" data-tab="backend">Backend</button>
+    </div>
+
+    <div class="projects">
+        <!-- Frontend Project 1 -->
+        <div class="project-card" data-category="frontend">
+            <div class="card-header frontend-header">
+                <h3>ArcGIS Map Layer Component</h3>
+            </div>
+            <div class="card-content">
+                <span class="difficulty beginner">Beginner</span>
+                <p>Add a new map layer to our ArcGIS implementation to visualize property boundaries or custom data points.</p>
+
+                <div class="tag-list">
+                    <span class="tag">ArcGIS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Fetch and render GeoJSON data</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Add interactive tooltips</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Implement toggle visibility</span>
+                    </div>
+                </div>
+
+                <div class="resources">
+                    <h4>Helpful Resources</h4>
+                    <a href="#" class="resource-link">ArcGIS JavaScript API Documentation</a>
+                    <a href="#" class="resource-link">Placepoint Map Layer Examples</a>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frontend Project 2 -->
+        <div class="project-card" data-category="frontend">
+            <div class="card-header frontend-header">
+                <h3>Property Image Gallery</h3>
+            </div>
+            <div class="card-content">
+                <span class="difficulty beginner">Beginner</span>
+                <p>Create a responsive image gallery component to display property listing images with carousel navigation and lightbox view.</p>
+
+                <div class="tag-list">
+                    <span class="tag">React</span>
+                    <span class="tag">UI Component</span>
+                    <span class="tag">API Integration</span>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Responsive image grid</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Carousel navigation</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Lightbox enlargement view</span>
+                    </div>
+                </div>
+
+                <div class="resources">
+                    <h4>Helpful Resources</h4>
+                    <a href="#" class="resource-link">Listing API Documentation</a>
+                    <a href="#" class="resource-link">React Component Library</a>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frontend Project 3 -->
+        <div class="project-card" data-category="frontend">
+            <div class="card-header frontend-header">
+                <h3>Property Valuation Dashboard</h3>
+            </div>
+            <div class="card-content">
+                <span class="difficulty intermediate">Intermediate</span>
+                <p>Build a dashboard component to visualize property valuations from multiple data sources with interactive comparison features.</p>
+
+                <div class="tag-list">
+                    <span class="tag">Data Visualization</span>
+                    <span class="tag">Charts</span>
+                    <span class="tag">React</span>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Multi-source valuation comparison</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Interactive chart components</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Price range visualization</span>
+                    </div>
+                </div>
+
+                <div class="resources">
+                    <h4>Helpful Resources</h4>
+                    <a href="#" class="resource-link">Valuation API Documentation</a>
+                    <a href="#" class="resource-link">Chart Library Documentation</a>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backend Project 1 -->
+        <div class="project-card" data-category="backend">
+            <div class="card-header backend-header">
+                <h3>Property Timeline API</h3>
+            </div>
+            <div class="card-content">
+                <span class="difficulty beginner">Beginner</span>
+                <p>Implement a new REST endpoint in the placepoint-integration-service to retrieve and format property timeline data.</p>
+
+                <div class="tag-list">
+                    <span class="tag">Go</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">Integration</span>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Create new REST endpoint</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Implement data formatting</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Add error handling</span>
+                    </div>
+                </div>
+
+                <div class="resources">
+                    <h4>Helpful Resources</h4>
+                    <a href="#" class="resource-link">Integration Service Documentation</a>
+                    <a href="#" class="resource-link">Go API Patterns</a>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backend Project 2 -->
+        <div class="project-card" data-category="backend">
+            <div class="card-header backend-header">
+                <h3>GraphQL Property Resolver</h3>
+            </div>
+            <div class="card-content">
+                <span class="difficulty intermediate">Intermediate</span>
+                <p>Create a new GraphQL schema, query, and resolver in the Placepoint codebase to expose property data through GraphQL.</p>
+
+                <div class="tag-list">
+                    <span class="tag">GraphQL</span>
+                    <span class="tag">Go</span>
+                    <span class="tag">API Development</span>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Define GraphQL schema</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Implement resolver in Go</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Connect to data sources</span>
+                    </div>
+                </div>
+
+                <div class="resources">
+                    <h4>Helpful Resources</h4>
+                    <a href="#" class="resource-link">GraphQL Schema Documentation</a>
+                    <a href="#" class="resource-link">Go GraphQL Implementation Guide</a>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backend Project 3 -->
+        <div class="project-card" data-category="backend">
+            <div class="card-header backend-header">
+                <h3>Data Integration Service</h3>
+            </div>
+            <div class="card-content">
+                <span class="difficulty advanced">Advanced</span>
+                <p>Develop a new integration service that connects with an external data provider and exposes the data through both REST and GraphQL.</p>
+
+                <div class="tag-list">
+                    <span class="tag">API Integration</span>
+                    <span class="tag">Go</span>
+                    <span class="tag">Data Processing</span>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>External API integration</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Data transformation layer</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Dual API exposure (REST & GraphQL)</span>
+                    </div>
+                </div>
+
+                <div class="resources">
+                    <h4>Helpful Resources</h4>
+                    <a href="#" class="resource-link">Integration Architecture Docs</a>
+                    <a href="#" class="resource-link">External API Documentation</a>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h2>Remember:</h2>
+        <p>This hackathon is all about exploration and learning. There's no judgment on what you create - the goal is to get comfortable with our codebase and have fun building something that interests you! Feel free to modify these project ideas or come up with something completely different.</p>
+        <p>For frontend developers: Play with frontend components and add whatever UI elements or features you find interesting.</p>
+        <p>For backend developers: Add REST APIs to the placepoint-integration-service or implement GraphQL schemas, queries, and resolvers in Go within the Placepoint codebase.</p>
+    </div>
+
+    <footer>
+        <p>Placepoint Team Big Dipper Hackathon - Have fun coding and welcome to the team!</p>
+    </footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab Switching
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const tabCategory = this.getAttribute('data-tab');
+
+                projectCards.forEach(card => {
+                    if (tabCategory === 'all' || card.getAttribute('data-category') === tabCategory) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Animate progress bars on load
+        const progressBars = document.querySelectorAll('.progress-bar');
+        setTimeout(() => {
+            progressBars.forEach(bar => {
+                const randomProgress = Math.floor(Math.random() * 30) + 10;
+                bar.style.width = randomProgress + '%';
+            });
+        }, 500);
+
+        // Simulate progress increases when cards are clicked
+        projectCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const progressBar = this.querySelector('.progress-bar');
+                const currentWidth = parseInt(progressBar.style.width) || 0;
+                const newWidth = Math.min(currentWidth + 15, 100);
+                progressBar.style.width = newWidth + '%';
+            });
+        });
+    });
+</script>
+</body>
+</html>
