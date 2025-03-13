@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,6 +145,7 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
         }
 
         .project-card:hover {
@@ -590,8 +591,8 @@
 
                 <div class="resources">
                     <h4>Helpful Resources</h4>
-                    <a href="#" class="resource-link">ArcGIS JavaScript API Documentation</a>
-                    <a href="#" class="resource-link">Placepoint Map Layer Examples</a>
+                    <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GraphicsLayer.html" class="resource-link" target="_blank">ArcGIS Graphics Layer API</a>
+                    <a href="https://developers.arcgis.com/javascript/latest/sample-code/intro-graphics/" class="resource-link" target="_blank">Intro to Graphics Sample</a>
                 </div>
 
                 <div class="progress-container">
@@ -632,8 +633,8 @@
 
                 <div class="resources">
                     <h4>Helpful Resources</h4>
-                    <a href="#" class="resource-link">Listing API Documentation</a>
-                    <a href="#" class="resource-link">React Component Library</a>
+                    <a href="https://ui.shadcn.com/docs" class="resource-link" target="_blank">Shadcn/ui Components</a>
+                    <a href="https://www.patterns.dev/react" class="resource-link" target="_blank">React Patterns</a>
                 </div>
 
                 <div class="progress-container">
@@ -645,37 +646,38 @@
         <!-- Frontend Project 3 -->
         <div class="project-card" data-category="frontend">
             <div class="card-header frontend-header">
-                <h3>Property Valuation Dashboard</h3>
+                <h3>Viewshed Analysis Widget</h3>
             </div>
             <div class="card-content">
                 <span class="difficulty intermediate">Intermediate</span>
-                <p>Build a dashboard component to visualize property valuations from multiple data sources with interactive comparison features.</p>
+                <p>Implement the Viewshed analysis widget to visualize what areas are visible from a selected point on the map.</p>
 
                 <div class="tag-list">
-                    <span class="tag">Data Visualization</span>
-                    <span class="tag">Charts</span>
+                    <span class="tag">ArcGIS</span>
+                    <span class="tag">3D Analysis</span>
                     <span class="tag">React</span>
                 </div>
 
                 <div class="feature-list">
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Multi-source valuation comparison</span>
+                        <span>Implement viewshed analysis</span>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Interactive chart components</span>
+                        <span>Control parameters (distance, angle)</span>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Price range visualization</span>
+                        <span>Visualize results on map</span>
                     </div>
                 </div>
 
                 <div class="resources">
                     <h4>Helpful Resources</h4>
-                    <a href="#" class="resource-link">Valuation API Documentation</a>
-                    <a href="#" class="resource-link">Chart Library Documentation</a>
+                    <a href="https://developers.arcgis.com/javascript/latest/api-reference/esri-analysis-Viewshed.html" class="resource-link" target="_blank">Viewshed API Reference</a>
+                    <a href="https://developers.arcgis.com/javascript/latest/sample-code/analysis-viewshed/" class="resource-link" target="_blank">Viewshed Sample Code</a>
+                    <a href="https://github.com/placepoint-no/placepoint/tree/master/apps/frontends/v2-console/src/map/widget" class="resource-link" target="_blank">Placepoint Widget Examples</a>
                 </div>
 
                 <div class="progress-container">
@@ -687,11 +689,11 @@
         <!-- Backend Project 1 -->
         <div class="project-card" data-category="backend">
             <div class="card-header backend-header">
-                <h3>Property Timeline API</h3>
+                <h3>REST Wars: The API Awakens 🚀</h3>
             </div>
             <div class="card-content">
                 <span class="difficulty beginner">Beginner</span>
-                <p>Implement a new REST endpoint in the placepoint-integration-service to retrieve and format property timeline data.</p>
+                <p>Implement a new REST endpoint in the placepoint-integration-service to retrieve your favourite Star Wars hero or anything that makes your game on 🔥</p>
 
                 <div class="tag-list">
                     <span class="tag">Go</span>
@@ -716,8 +718,9 @@
 
                 <div class="resources">
                     <h4>Helpful Resources</h4>
-                    <a href="#" class="resource-link">Integration Service Documentation</a>
-                    <a href="#" class="resource-link">Go API Patterns</a>
+                    <a href="https://github.com/softwrdai/placepoint-integration-service/blob/bf1717aa9aa8ec7e4df120ec325a407d91d57d53/README.md" class="resource-link" target="_blank">Integration Service Documentation</a>
+                    <a href="https://github.com/public-apis/public-apis" class="resource-link" target="_blank">Try Public APIs for free</a>
+                    <a href="https://quii.gitbook.io/learn-go-with-tests" class="resource-link" target="_blank">Learn Go with Tests</a>
                 </div>
 
                 <div class="progress-container">
@@ -758,8 +761,9 @@
 
                 <div class="resources">
                     <h4>Helpful Resources</h4>
-                    <a href="#" class="resource-link">GraphQL Schema Documentation</a>
-                    <a href="#" class="resource-link">Go GraphQL Implementation Guide</a>
+                    <a href="https://www.howtographql.com" class="resource-link" target="_blank">GraphQL Schema Documentation</a>
+                    <a href="https://app.clickup.com/4732225/v/dc/4gda1-14358/4gda1-8558" class="resource-link" target="_blank">Example GraphQL Flow</a>
+                    <a href="https://gqlgen.com/getting-started/" class="resource-link" target="_blank">Go GraphQL Implementation Guide</a>
                 </div>
 
                 <div class="progress-container">
@@ -800,13 +804,207 @@
 
                 <div class="resources">
                     <h4>Helpful Resources</h4>
-                    <a href="#" class="resource-link">Integration Architecture Docs</a>
-                    <a href="#" class="resource-link">External API Documentation</a>
+                    <a href="https://dev.to/truongpx396/common-design-patterns-in-golang-5789" class="resource-link" target="_blank">Go API Patterns</a>
+                    <a href="https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth" class="resource-link" target="_blank">Authentication & Authorisation</a>
+                    <a href="https://blog.treblle.com/essential-guide-api-documentation-best-practices-tools/" class="resource-link" target="_blank">External API Documentation</a>
                 </div>
 
                 <div class="progress-container">
                     <div class="progress-bar"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Resources Section -->
+    <div class="featured-section">
+        <h2>📚 Additional Learning Resources</h2>
+        <p>Here are additional resources to help you during the hackathon and beyond:</p>
+
+        <!-- Learning Resources -->
+        <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 1rem;">Learning Foundations</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <!-- GraphQL -->
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Learn GraphQL</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://odyssey.apollographql.com" target="_blank" style="color: var(--primary); text-decoration: none;">Apollo GraphQL Tutorial</a></li>
+                    <li><a href="https://www.howtographql.com" target="_blank" style="color: var(--primary); text-decoration: none;">How to GraphQL</a></li>
+                </ul>
+            </div>
+
+            <!-- ArcGIS -->
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Learn ArcGIS</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://developers.arcgis.com/javascript/latest/display-a-map/" target="_blank" style="color: var(--primary); text-decoration: none;">JavaScript SDK</a></li>
+                    <li><a href="https://developers.arcgis.com/arcgis-rest-js/" target="_blank" style="color: var(--primary); text-decoration: none;">REST API</a></li>
+                </ul>
+            </div>
+
+            <!-- TypeScript & React -->
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Frontend Development</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://www.freecodecamp.org/news/advanced-typescript-types-cheat-sheet-with-examples/" target="_blank" style="color: var(--primary); text-decoration: none;">TypeScript Utilities Cheat Sheet</a></li>
+                    <li><a href="https://www.patterns.dev/react" target="_blank" style="color: var(--primary); text-decoration: none;">JavaScript/React Patterns</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Programming Concepts -->
+        <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">Programming Concepts</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <!-- Programming Paradigms -->
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Programming Paradigms</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://www.freecodecamp.org/news/imperative-vs-declarative-programming-difference/" target="_blank" style="color: var(--primary); text-decoration: none;">Declarative vs. Imperative</a></li>
+                    <li><a href="https://scoutapm.com/blog/functional-vs-procedural-vs-oop" target="_blank" style="color: var(--primary); text-decoration: none;">Procedural vs. FP vs. OOP</a></li>
+                </ul>
+            </div>
+
+            <!-- Architecture Concepts -->
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Architecture Concepts</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://redux.js.org/usage/structuring-reducers/normalizing-state-shape" target="_blank" style="color: var(--primary); text-decoration: none;">Normalizing Data Structures</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://kentcdodds.com/blog/inversion-of-control" target="_blank" style="color: var(--primary); text-decoration: none;">Inversion of Control</a></li>
+                    <li><a href="https://www.makeuseof.com/tag/basic-programming-principles" target="_blank" style="color: var(--primary); text-decoration: none;">Programming Guiding Principles</a></li>
+                </ul>
+            </div>
+
+            <!-- Problem Solving -->
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Problem Solving</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><a href="https://kentcdodds.com/blog/don-t-solve-problems-eliminate-them" target="_blank" style="color: var(--primary); text-decoration: none;">Avoid Problems: Eliminate Them</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Patterns & Practices -->
+        <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">Patterns & Practices</h3>
+
+        <!-- General -->
+        <h4 style="color: var(--dark); margin-top: 1.5rem; margin-bottom: 0.75rem;">General</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">Code Quality</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><span style="color: var(--dark);">Functional Programming Patterns:</span> Immutability, Currying, Partial Application</li>
+                    <li><a href="https://betterprogramming.pub/javascript-clean-code-comments-c926d5aae2cb" target="_blank" style="color: var(--primary); text-decoration: none;">Clean Code Comments</a></li>
+                </ul>
+            </div>
+
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">Performance</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5" target="_blank" style="color: var(--primary); text-decoration: none;">DOM Performance Tips</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://gist.github.com/paulirish/5d52fb081b3570c81e3a" target="_blank" style="color: var(--primary); text-decoration: none;">Performance Optimization</a></li>
+                    <li><a href="https://lab.skk.moe/css-triggers" target="_blank" style="color: var(--primary); text-decoration: none;">CSS Triggers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- React -->
+        <h4 style="color: var(--dark); margin-top: 1.5rem; margin-bottom: 0.75rem;">React</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">Component Patterns</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://kentcdodds.com/blog/compound-components-with-react-hooks" target="_blank" style="color: var(--primary); text-decoration: none;">Compound Components</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://americanexpress.io/hydra/" target="_blank" style="color: var(--primary); text-decoration: none;">Hydra Pattern</a></li>
+                    <li><a href="https://kentcdodds.com/blog/usememo-and-usecallback" target="_blank" style="color: var(--primary); text-decoration: none;">When to Memoize</a></li>
+                </ul>
+            </div>
+
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">State Management</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://kentcdodds.com/blog/application-state-management-with-react" target="_blank" style="color: var(--primary); text-decoration: none;">Application State Management</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://kentcdodds.com/blog/how-to-use-react-context-effectively" target="_blank" style="color: var(--primary); text-decoration: none;">Using React Context Effectively</a></li>
+                    <li><a href="https://www.apollographql.com/docs/react/caching/overview/" target="_blank" style="color: var(--primary); text-decoration: none;">Apollo Cache</a></li>
+                </ul>
+            </div>
+
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">TypeScript in React</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://kentcdodds.com/blog/how-to-write-a-react-component-in-typescript" target="_blank" style="color: var(--primary); text-decoration: none;">Writing React Components in TypeScript</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://kentcdodds.com/blog/how-to-write-a-constrained-identity-function-in-typescript" target="_blank" style="color: var(--primary); text-decoration: none;">Constrained Identity Functions</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://kentcdodds.com/blog/typescript-function-syntaxes" target="_blank" style="color: var(--primary); text-decoration: none;">TypeScript Function Syntaxes</a></li>
+                    <li><a href="https://github.com/typescript-cheatsheets/react" target="_blank" style="color: var(--primary); text-decoration: none;">React TypeScript Cheatsheets</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <h4 style="color: var(--dark); margin-top: 1.5rem; margin-bottom: 0.75rem;">Backend</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">API Architecture</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><a href="https://nordicapis.com/defining-stateful-vs-stateless-web-services/" target="_blank" style="color: var(--primary); text-decoration: none;">Stateful vs. Stateless</a></li>
+                </ul>
+            </div>
+
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">GraphQL</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://www.apollographql.com/docs/apollo-server/schema/directives/" target="_blank" style="color: var(--primary); text-decoration: none;">GraphQL Directives</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://graphql.org/learn/pagination/" target="_blank" style="color: var(--primary); text-decoration: none;">GraphQL Pagination</a></li>
+                    <li><a href="https://www.moesif.com/blog/api-guide/graphql-best-practices-resources-and-design-patterns/" target="_blank" style="color: var(--primary); text-decoration: none;">GraphQL Design Patterns</a></li>
+                </ul>
+            </div>
+
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">Node.js</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><a href="https://nodejs.org/en/docs/guides/dont-block-the-event-loop/" target="_blank" style="color: var(--primary); text-decoration: none;">Don't Block the Event Loop</a></li>
+                </ul>
+            </div>
+
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h5 style="color: var(--dark); margin-bottom: 0.75rem;">Authentication & Authorization</h5>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth" target="_blank" style="color: var(--primary); text-decoration: none;">OAuth Explained</a></li>
+                    <li><a href="https://www.okta.com/identity-101/role-based-access-control-vs-attribute-based-access-control/" target="_blank" style="color: var(--primary); text-decoration: none;">RBAC vs. ABAC</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- GIS -->
+        <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">GIS Resources</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Coordinate Systems</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/coordinate-systems-and-projections.htm" target="_blank" style="color: var(--primary); text-decoration: none;">ArcGIS Coordinate Systems</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system" target="_blank" style="color: var(--primary); text-decoration: none;">Geographic Coordinate Systems</a></li>
+                </ul>
+            </div>
+
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Data Formats</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://en.wikipedia.org/wiki/GeoJSON" target="_blank" style="color: var(--primary); text-decoration: none;">GeoJSON Format</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://geoservices.github.io/" target="_blank" style="color: var(--primary); text-decoration: none;">Geoservice Standard</a></li>
+                    <li><a href="https://wiki.openstreetmap.org/wiki/PBF_Format" target="_blank" style="color: var(--primary); text-decoration: none;">PBF Format</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Azure Architecture -->
+        <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">Azure Architecture</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div style="background-color: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--dark); margin-bottom: 0.75rem;">Azure Resources</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="https://docs.microsoft.com/en-us/azure/architecture/framework/" target="_blank" style="color: var(--primary); text-decoration: none;">Azure Architecture Framework</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="https://docs.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service" target="_blank" style="color: var(--primary); text-decoration: none;">Resiliency Checklist</a></li>
+                    <li><a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/app-service-web-app/basic-web-app?tabs=cli" target="_blank" style="color: var(--primary); text-decoration: none;">Web App Reference Architecture</a></li>
+                </ul>
             </div>
         </div>
     </div>
